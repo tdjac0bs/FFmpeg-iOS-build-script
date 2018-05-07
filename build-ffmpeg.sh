@@ -15,6 +15,9 @@ THIN=`pwd`/"thin"
 # absolute path to x264 library
 #X264=`pwd`/fat-x264
 
+#Path to RTMP
+RTMP="../../rtmp/librtmp-iOS/"
+
 #FDK_AAC=`pwd`/../fdk-aac-build-script-for-iOS/fdk-aac-ios
 
 CONFIGURE_FLAGS="--enable-cross-compile --disable-debug --disable-programs \
@@ -24,6 +27,12 @@ if [ "$X264" ]
 then
 	CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-gpl --enable-libx264"
 fi
+
+if [ "$RTMP" ]
+then
+	CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-protocol=librtmp --enable-librtmp"
+fi
+
 
 if [ "$FDK_AAC" ]
 then
@@ -125,6 +134,14 @@ then
 			CFLAGS="$CFLAGS -I$X264/include"
 			LDFLAGS="$LDFLAGS -L$X264/lib"
 		fi
+
+    if [ "$RTMP" ]
+		then
+			CFLAGS="$CFLAGS -I$RTMP/include"
+			LDFLAGS="$LDFLAGS -L$RTMP/lib"
+		fi
+
+
 		if [ "$FDK_AAC" ]
 		then
 			CFLAGS="$CFLAGS -I$FDK_AAC/include"
