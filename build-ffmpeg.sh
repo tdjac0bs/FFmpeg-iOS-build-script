@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 
 # directories
 FF_VERSION="3.4.2"
