@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 
 # directories
 FF_VERSION="3.4.2"
@@ -16,7 +16,7 @@ THIN=`pwd`/"thin"
 #X264=`pwd`/fat-x264
 
 #Path to RTMP
-RTMP="`pwd ../../rtmp/librtmp-iOS/`"
+RTMP="`cd ../../rtmp/librtmp-iOS/; pwd`"
 
 #FDK_AAC=`pwd`/../fdk-aac-build-script-for-iOS/fdk-aac-ios
 
