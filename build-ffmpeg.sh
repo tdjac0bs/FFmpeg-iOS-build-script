@@ -93,6 +93,8 @@ then
 		echo 'FFmpeg source not found. Trying to download...'
 		curl http://www.ffmpeg.org/releases/$SOURCE.tar.bz2 | tar xj \
 			|| exit 1
+		echo 'Patching configure file'
+		patch -p1 < ffmpeg_configure.patch
 	fi
 
 	CWD=`pwd`
