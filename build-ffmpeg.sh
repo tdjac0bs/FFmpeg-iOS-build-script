@@ -16,7 +16,7 @@ THIN=`pwd`/"thin"
 #X264=`pwd`/fat-x264
 
 #Path to RTMP
-RTMP="../../rtmp/librtmp-iOS/"
+RTMP="`pwd ../../rtmp/librtmp-iOS/`"
 
 #FDK_AAC=`pwd`/../fdk-aac-build-script-for-iOS/fdk-aac-ios
 
